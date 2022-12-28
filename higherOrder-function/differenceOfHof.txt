@@ -1,0 +1,45 @@
+For-loop;
+syntax: for (initialExpression; condition; updateExpression) {
+    // for loop body
+}
+1. The initialExpression initializes and/or declares variables and executes only once.
+2. The condition is evaluated.
+3. If the condition is false, the for loop is terminated.
+4. If the condition is true, the block of code inside of the for loop is executed.
+5. The updateExpression updates the value of initialExpression when the condition is true.
+6. The condition is evaluated again. This process continues until the condition is false.
+
+forEach():
+is used to execute the same code on every element in an array but does not change the array and it returns undefined.
+Example:
+let food = ['mango','rice','pepper','pear'];
+food.forEach(function(foodItem){ console.log('I want to eat '+foodItem);
+});
+
+map():
+It executes the same code on every element in an array and returns a new array with the updated elements.
+Example:
+let cost = [100,400,300,700];
+let newCost = cost.map(function(costItem){ return costItem / 10;
+});
+console.log(newCost);
+
+filter():
+It checks every element in an array to see if it meets a certain criteria and returns a new array with the elements that return truthy for the criteria.
+In the example below we would use .filter to return values that are less than 200.
+let cost = [100,400,50,40,700];
+let smallCost = cost.filter(function(costItem){ return costItem < 200
+});
+console.log(smallCost);
+
+reduce():
+It works differently than map() and filter() . It does not return a new list based on the function and iterable we've passed.
+Instead, it returns a single value.
+let num = [5, 9, 12, 24, 67]
+let sum = num.reduce(function (accumulator, curValue) {
+
+  return accumulator + curValue
+
+}, 0)
+
+console.log(sum)
